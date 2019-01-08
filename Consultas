@@ -12,6 +12,14 @@ VALUES (?, ?, ?, ?);
 
 Datos para Listar las Multas:
 
+SELECT 
+	m.id as 'id_multa',
+	c.matricula as 'matricula',
+    m.fecha as 'fecha',
+    m.concepto as 'concepto'
+FROM multas as m, coches as c
+WHERE m.id_coche = c.id;
+
 
 
 
