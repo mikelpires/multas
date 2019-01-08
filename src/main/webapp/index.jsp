@@ -21,7 +21,7 @@
 <body class="text-center">
 	<div class="container">
 		<div class="jumbotron">
-			<h1>Hola mundo</h1>
+			<h1>Hola marica</h1>
 
 				<div class="card" style="width: 18rem;">
 					<img class="card-img-top"
