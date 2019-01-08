@@ -7,6 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ipartek.formacion.modelo.pojo.Agente;
 
 /**
  * Servlet implementation class LoginController
@@ -19,14 +22,14 @@ public class IndexController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		
-//		HttpSession session = request.getSession();
-//		
-//		Agente usuario = new Agente();
-//		usuario.setId(1L);
-//		usuario.setEmail(email);
-//		usuario.setPassword(pass);
-//
-//		session.setAttribute("usuario", usuario);
+		HttpSession session = request.getSession();
+		
+		Agente agente = new Agente();
+		agente.setId(1);
+		agente.setNombre("tackleberry");
+		agente.setPlaca(5433);
+
+		session.setAttribute("agente", agente);
 		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
