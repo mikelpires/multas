@@ -1,0 +1,18 @@
+Buscar Matricula:
+
+SELECT id as 'id_coche', matricula 'matricula' FROM coches;
+
+
+
+Nueva Multa:
+
+INSERT INTO  multas(importe, concepto, id_coche, id_agente) 
+VALUES (?, ?, ?, ?);
+
+
+Datos para Listar las Multas:
+
+
+
+
+
