@@ -20,6 +20,7 @@ public class Multa {
 	}
 	
 	public Multa(int id, float importe, String concepto, String fecha) {
+		this();
 		setId(id);
 		setImporte(importe);
 		setConcepto(concepto);

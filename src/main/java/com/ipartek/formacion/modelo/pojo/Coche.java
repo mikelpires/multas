@@ -17,6 +17,7 @@ public class Coche {
 		}
 		
 		public Coche(int id, String matricula, String modelo, int km) {
+			this();
 			setId(id);
 			setMatricula(matricula);
 			setModelo(modelo);

@@ -15,6 +15,7 @@ public class Agente {
 	}
 	
 	public Agente(int id, String nombre, int placa) {
+		this();
 		setId(id);
 		setNombre(nombre);
 		setPlaca(placa);
