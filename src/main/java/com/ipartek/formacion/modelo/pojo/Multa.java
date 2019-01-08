@@ -6,7 +6,7 @@ public class Multa {
 	private int id;
 	private float importe;
 	private String concepto;
-	private Date fecha;
+	private String fecha;
 	
 	
 	
@@ -15,10 +15,19 @@ public class Multa {
 		this.id = -1;
 		this.importe = -1;
 		this.concepto = "Concepto";
-		
+		this.fecha = "00-00-0000";
 		
 	}
 	
+	public Multa(int id, float importe, String concepto, String fecha) {
+		setId(id);
+		setImporte(importe);
+		setConcepto(concepto);
+		setFecha(fecha);
+	}
+	
+	
+	//GETTERS & SETTERS
 	
 	
 	public int getId() {
@@ -39,11 +48,18 @@ public class Multa {
 	public void setConcepto(String concepto) {
 		this.concepto = concepto;
 	}
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+	
+	//TO STRING
+
+	@Override
+	public String toString() {
+		return "Multa [id=" + id + ", importe=" + importe + ", concepto=" + concepto + ", fecha=" + fecha + "]";
 	}
 	
 	
