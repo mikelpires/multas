@@ -26,7 +26,7 @@
 				<div class="col-sm-6 col-xs-12" >
 					<div class="card" style="width: 100%;">
 					<h2>Ver multas</h2>
-					<a href="vermultas.jsp" class="btn ">
+					<a href="listado?idAgente=${agente.id}" class="btn ">
 						<img class="card-img-top"
 							src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Checklist_Noun_project_5166_yellow.svg"
 							alt="Card image cap">

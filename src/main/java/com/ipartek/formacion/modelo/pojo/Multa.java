@@ -8,6 +8,9 @@ public class Multa {
 	private String concepto;
 	private String fecha;
 	
+	private Coche coche;
+	private Agente agente;
+	
 	
 	
 	public Multa() {
@@ -16,7 +19,16 @@ public class Multa {
 		this.importe = -1;
 		this.concepto = "Concepto";
 		this.fecha = "00-00-0000";
+		this.coche = new Coche();
 		
+	}
+	
+	public Coche getCoche() {
+		return coche;
+	}
+
+	public void setCoche(Coche coche) {
+		this.coche = coche;
 	}
 	
 	public Multa(int id, float importe, String concepto, String fecha) {
@@ -60,7 +72,8 @@ public class Multa {
 
 	@Override
 	public String toString() {
-		return "Multa [id=" + id + ", importe=" + importe + ", concepto=" + concepto + ", fecha=" + fecha + "]";
+		return "Multa [id=" + id + ", importe=" + importe + ", concepto=" + concepto + ", fecha=" + fecha + ", coche="
+				+ coche + ", agente=" + agente + "]";
 	}
 	
 	
