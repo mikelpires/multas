@@ -32,9 +32,7 @@ public class MostrarMultasController extends HttpServlet {
 		int id = Integer.parseInt(idAgente);
 		//		HttpSession session = request.getSession();
 //		session.getAttribute("agente");
-
-		ArrayList<Multa> multas = dao.getAll(2);
-		request.setAttribute("multas", multas);
+		request.setAttribute("multas", dao.getAll(id));
 		request.getRequestDispatcher("listadoMultas.jsp").forward(request, response);
 
 		

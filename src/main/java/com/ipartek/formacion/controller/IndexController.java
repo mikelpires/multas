@@ -25,9 +25,8 @@ public class IndexController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		Agente agente = new Agente();
-		agente.setId(4);
-		agente.setNombre("tackleberry");
-		agente.setPlaca(5433);
+		agente.setId(2);
+		agente.setNombre("jonywalker");
 
 		session.setAttribute("agente", agente);
 		

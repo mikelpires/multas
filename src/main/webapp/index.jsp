@@ -21,10 +21,11 @@
 <body class="text-center">
 	<div class="container-fluid">
 		<div class="jumbotron mx-auto">
+		
 			<h1 class="mb-5">Bienvenido, ${agente.nombre}</h1>
 			<div class="row">
-				<div class="col-sm-6 col-xs-12" >
-					<div class="card" style="width: 100%;">
+				<div class="col-sm-4 col-xs-4" >
+					<div class="card" style="width: 9em;">
 					<h2>Ver multas</h2>
 					<a href="listado?idAgente=${agente.id}" class="btn ">
 						<img class="card-img-top"
@@ -34,8 +35,8 @@
 
 					</div>
 					</div>
-					<div class="col-md-6 col-xs-12">
-						<div class="card" style="width: 100%;">
+					<div class="col-md-4 col-xs-4">
+						<div class="card" style="width: 9em;">
 						<h2>Multar</h2>
 						<a href="multar" class="btn">
 							<img class="card-img-top"
