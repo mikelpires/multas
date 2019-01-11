@@ -43,7 +43,7 @@ public class Coche {
 
 
 		public void setMatricula(String matricula) {
-			matricula = matricula;
+			this.matricula = matricula;
 		}
 
 
@@ -53,7 +53,7 @@ public class Coche {
 
 
 		public void setModelo(String modelo) {
-			modelo = modelo;
+			this.modelo = modelo;
 		}
 
 
