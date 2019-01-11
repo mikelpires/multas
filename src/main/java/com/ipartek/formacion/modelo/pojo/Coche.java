@@ -1,79 +1,74 @@
 package com.ipartek.formacion.modelo.pojo;
 
 public class Coche {
-	
-		private int id;
-		private String matricula;
-		private String modelo;
-		private int km;
-		
-		
-		public Coche() {
-			super();
-			this.id = -1;
-			this.matricula = "0000AAA";
-			this.modelo = "MARCA MODELO";
-			this.km =  000;
-		}
-		
-		public Coche(int id, String matricula, String modelo, int km) {
-			this();
-			setId(id);
-			setMatricula(matricula);
-			setModelo(modelo);
-			setKm(km);
-		}
 
-		
-		//GETTERS & SETTERS
+	private int id;
+	private String matricula;
+	private String modelo;
+	private int km;
 
-		public int getId() {
-			return id;
-		}
+	public Coche() {
+		super();
+		this.id = -1;
+		this.matricula = "0000AAA";
+		this.modelo = "MARCA MODELO";
+		this.km = 000;
+	}
 
+	public Coche(int id, String matricula) {
+		super();
+		this.id = id;
+		this.matricula = matricula;
 
-		public void setId(int id) {
-			this.id = id;
-		}
+	}
 
+	public Coche(int id, String matricula, String modelo, int km) {
+		this();
+		setId(id);
+		setMatricula(matricula);
+		setModelo(modelo);
+		setKm(km);
+	}
 
-		public String getMatricula() {
-			return matricula;
-		}
+	// GETTERS & SETTERS
 
+	public int getId() {
+		return id;
+	}
 
-		public void setMatricula(String matricula) {
-			this.matricula = matricula;
-		}
+	public void setId(int id) {
+		this.id = id;
+	}
 
+	public String getMatricula() {
+		return matricula;
+	}
 
-		public String getModelo() {
-			return modelo;
-		}
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
 
+	public String getModelo() {
+		return modelo;
+	}
 
-		public void setModelo(String modelo) {
-			this.modelo = modelo;
-		}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
 
+	public int getKm() {
+		return km;
+	}
 
-		public int getKm() {
-			return km;
-		}
+	public void setKm(int km) {
+		this.km = km;
+	}
 
+	// TO STRING
 
-		public void setKm(int km) {
-			this.km = km;
-		}
+	@Override
+	public String toString() {
+		return "Coche [id=" + id + ", Matricula=" + matricula + ", Modelo=" + modelo + ", km=" + km + "]";
+	}
 
-		//TO STRING
-
-		@Override
-		public String toString() {
-			return "Coche [id=" + id + ", Matricula=" + matricula + ", Modelo=" + modelo + ", km=" + km + "]";
-		}
-		
-		
-		
-	
 }

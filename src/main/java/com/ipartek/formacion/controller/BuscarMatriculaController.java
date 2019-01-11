@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.modelo.dao.MatriculaDAO;
 
-@WebServlet("/listado")
-public class MostrarMultasController extends HttpServlet {
+@WebServlet("/buscar")
+public class BuscarMatriculaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MatriculaDAO dao;
 
@@ -25,13 +25,7 @@ public class MostrarMultasController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String idAgente = request.getParameter("idAgente");
-
-		int id = Integer.parseInt(idAgente);
-		// HttpSession session = request.getSession();
-//		session.getAttribute("agente");
-		request.setAttribute("multas", dao.getAll(id));
-		request.getRequestDispatcher("listadoMultas.jsp").forward(request, response);
+		doPost(request, response);
 
 	}
 
@@ -41,7 +35,10 @@ public class MostrarMultasController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		String matricula = request.getParameter("matricula");
+
+		request.setAttribute("coche", dao.getByMatricula(matricula));
+		request.getRequestDispatcher("multar.jsp").forward(request, response);
 	}
 
 }

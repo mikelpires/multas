@@ -1,7 +1,5 @@
 package com.ipartek.formacion.modelo.pojo;
 
-import java.sql.Date;
-
 public class Multa {
 	private int id;
 	private float importe;

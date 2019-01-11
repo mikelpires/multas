@@ -11,7 +11,7 @@ import com.ipartek.formacion.modelo.pojo.Multa;
 
 public class MatriculaDAO {
 
-	public static final String SQL_GETID = "SELECT id, matricula from coche where matricula = ?";
+	public static final String SQL_GETBYMATRICULA = "SELECT id, matricula from coche where matricula = ?";
 	public static final String SQL_GETALL = "SELECT m.id as 'id_multa', c.matricula as 'matricula',c.modelo as 'modelo', m.fecha as 'fecha', m.concepto as 'concepto' FROM multa as m, coche as c, agente as a WHERE m.id_coche = c.id AND a.id = m.id_agente AND a.id = ?;";
 	private static MatriculaDAO INSTANCE = null;
 
@@ -28,20 +28,20 @@ public class MatriculaDAO {
 		return INSTANCE;
 	}
 
-	public Coche getByMatricula(int matricula) {
+	public Coche getByMatricula(String matricula) {
 
 		Coche coche = null;
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_GETID);) {
+				PreparedStatement pst = conn.prepareStatement(SQL_GETBYMATRICULA);) {
 
-			pst.setInt(1, matricula);
+			pst.setString(1, matricula);
 
 			try (ResultSet rs = pst.executeQuery()) {
 
 				while (rs.next()) {
 
-
+					coche = new Coche(rs.getInt("id"), rs.getString("matricula"));
 				}
 			}
 
@@ -51,7 +51,7 @@ public class MatriculaDAO {
 
 		return coche;
 	}
-	
+
 	public ArrayList<Multa> getAll(int id) {
 
 		ArrayList<Multa> multas = new ArrayList<Multa>();
@@ -68,16 +68,16 @@ public class MatriculaDAO {
 					m.setId(rs.getInt("id_multa"));
 					m.setFecha(rs.getString("fecha"));
 					m.setConcepto(rs.getString("concepto"));
-					
+
 					Coche c = new Coche();
 					c.setMatricula(rs.getString("matricula"));
 					c.setModelo(rs.getString("modelo"));
-					
+
 					m.setCoche(c);
 					multas.add(m);
 
 				}
-				
+
 			}
 
 		} catch (Exception e) {
@@ -86,6 +86,5 @@ public class MatriculaDAO {
 
 		return multas;
 	}
-	
 
 }
