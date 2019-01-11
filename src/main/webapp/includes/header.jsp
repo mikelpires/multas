@@ -23,4 +23,4 @@
 <!--    <link href="https://getbootstrap.com/docs/4.1/examples/navbar-fixed/navbar-top-fixed.css" rel="stylesheet"> 
  -->  </head>
 
-  <body>
+  <body class="text-center" class="container-fluid">

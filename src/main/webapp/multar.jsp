@@ -1,7 +1,5 @@
 <%@ include file="includes/header.jsp"%>
 
-<body class="text-center" class="container-fluid">
-
 
 	<form action="/action_page.php" class="form-signin" method="post">
 		<div class="form-group">
@@ -29,7 +27,3 @@
 		<button type="submit" class="btn btn-warning">Aceptar</button>
 	</form>
 
-
-</body>
-
-</html>
