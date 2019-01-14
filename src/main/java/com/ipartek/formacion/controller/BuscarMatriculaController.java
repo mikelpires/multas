@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.modelo.dao.MatriculaDAO;
+import com.ipartek.formacion.modelo.pojo.Alerta;
 
 @WebServlet("/buscar")
 public class BuscarMatriculaController extends HttpServlet {
@@ -36,9 +37,15 @@ public class BuscarMatriculaController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String matricula = request.getParameter("matricula");
-
+		
+		if(dao.getByMatricula(matricula)==null) {
+			Alerta alerta = new Alerta("danger","La matricula introducida no existe");
+			request.setAttribute("alerta", alerta);
+			request.getRequestDispatcher("buscar.jsp").forward(request, response);
+		}else {
 		request.setAttribute("coche", dao.getByMatricula(matricula));
 		request.getRequestDispatcher("multar.jsp").forward(request, response);
+		}
 	}
 
 }

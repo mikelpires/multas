@@ -1,4 +1,5 @@
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="includes/header.jsp"%>
+<%@ include file="includes/mensajes.jsp"%>
 
 <body class="text-center">
 	<div class="container-fluid">

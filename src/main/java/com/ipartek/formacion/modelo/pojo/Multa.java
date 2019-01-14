@@ -1,9 +1,20 @@
 package com.ipartek.formacion.modelo.pojo;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Multa {
 	private int id;
+	
+
+	@Digits(fraction = 999, integer = 999)
 	private float importe;
+	
+	@NotNull
+	@Size(min=5, max=150)
 	private String concepto;
+	
 	private String fecha;
 	
 	private Coche coche;
