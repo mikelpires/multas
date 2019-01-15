@@ -1,6 +1,7 @@
 package com.ipartek.formacion.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.ipartek.formacion.modelo.dao.MatriculaDAO;
 import com.ipartek.formacion.modelo.pojo.Alerta;
 
-@WebServlet("/buscar")
-public class BuscarMatriculaController extends HttpServlet {
+@WebServlet("/anular")
+public class AnularController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MatriculaDAO dao;
 
@@ -26,8 +27,24 @@ public class BuscarMatriculaController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		doPost(request, response);
+		String idAgenteStr = request.getParameter("idAgente");
+		String idMultaStr = request.getParameter("idMulta");
 
+		try {
+			int idAgente = Integer.parseInt(idAgenteStr);
+			int idMulta = Integer.parseInt(idMultaStr);
+			if (dao.anular(idMulta) == true) {
+
+				Alerta alerta = new Alerta("success", "Registro anulado con exito");
+				request.setAttribute("anuladas", dao.getAnuladas(idAgente));
+				request.setAttribute("alerta", alerta);
+				request.getRequestDispatcher("listadoAnuladas.jsp").forward(request, response);
+			}
+		} catch (SQLException e) {
+			Alerta alerta = new Alerta("danger", "Ha habido un error inesperado");
+			request.setAttribute("alerta", alerta);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -36,16 +53,7 @@ public class BuscarMatriculaController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String matricula = request.getParameter("matricula");
 
-		if (dao.getByMatricula(matricula) == null) {
-			Alerta alerta = new Alerta("danger", "La matricula introducida no existe");
-			request.setAttribute("alerta", alerta);
-			request.getRequestDispatcher("buscar.jsp").forward(request, response);
-		} else {
-			request.setAttribute("coche", dao.getByMatricula(matricula));
-			request.getRequestDispatcher("multar.jsp").forward(request, response);
-		}
+		doGet(request, response);
 	}
-
 }

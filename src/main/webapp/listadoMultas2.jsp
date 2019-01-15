@@ -26,39 +26,11 @@
 					<td>${m.coche.matricula}</td>
 					<td>${m.concepto}</td>
 					<td>${m.fecha}</td>
-					<td><c:choose><c:when test = "${empty m.fechaBaja }"><button type="button" class="btn btn-warning"
-							data-toggle="modal" data-target="#modal${m.id}">Click
-							aqui</button></c:when><c:otherwise>Ya anulada</c:otherwise></c:choose></td>
+					<td><a class="btn btn-warning"
+						href="anular?idAgente=${agente.id}&idMulta=${m.id}"
+						target="_blank">Click aqui</a></td>
 				</tr>
-				<div class="modal fade" id="modal${m.id}" tabindex="-1"
-					role="dialog" aria-labelledby="exampleModalLabel"
-					aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">¿Estas
-									seguro?</h5>
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								Estas a punto de anular la multa por <strong>${m.concepto}</strong>
-								del coche <strong>${m.coche.matricula}</strong>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal">Cerrar</button>
-								<a class="btn btn-warning"
-									href="anular?idAgente=${agente.id}&idMulta=${m.id}"
-									target="_blank">Anular</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</c:forEach>
-
 		</tbody>
 	</table>
 

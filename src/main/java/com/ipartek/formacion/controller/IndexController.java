@@ -16,29 +16,27 @@ import com.ipartek.formacion.modelo.pojo.Agente;
  */
 @WebServlet("/index")
 public class IndexController extends HttpServlet {
-	
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		HttpSession session = request.getSession();
-		
+
 		Agente agente = new Agente();
 		agente.setId(2);
 		agente.setNombre("jonywalker");
 
 		session.setAttribute("agente", agente);
-		
+
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-    
-    
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
-
-	
 
 }

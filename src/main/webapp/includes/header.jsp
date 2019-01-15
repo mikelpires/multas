@@ -4,22 +4,32 @@
 
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../../../favicon.ico">
+<!-- Fonts Awesome -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<title>Multas</title>
 
-    <title>Multas</title>
+<base href="${pageContext.request.contextPath}/">
 
-	<base href="${pageContext.request.contextPath}/">
+<!-- Bootstrap core CSS -->
+<link
+	href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link
+	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"
+	rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    
 </head>
 
-  <body class="text-center" class="container-fluid">
+<body class="text-center" class="container-fluid">

@@ -71,7 +71,7 @@
        Contacta con el administrador si el problema persiste. Lo sentimos
         </p>
         <p>
-        Si quieres volver a la pagina principal <a href="http://localhost:8080/libros/">pincha en este link</a>.
+        Si quieres volver a la pagina principal <a href="http://localhost:8080/multas/">pincha en este link</a>.
         </p>
         </div>
     </div>

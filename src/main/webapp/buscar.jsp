@@ -1,22 +1,23 @@
 <%@ include file="../includes/header.jsp"%>
 
-<main role="main" class="container text-center">
 
 
 
 <div class="jumbotron">
 	<div class="row">
-		<div class="col-3">
-			<a href="index.jsp" class="btn btn-primary btn-lg active atras"
-				role="button" aria-pressed="true">Atras</a>
+		<div class="col-1">
+			<span style="font-size: 3em; color: Dodgerblue;"> <a
+				href="index.jsp" class="fas fa-arrow-circle-left" role="button"
+				aria-pressed="true"></a>
+			</span>
 		</div>
 	</div>
-<%@ include file="includes/mensajes.jsp"%>
+	<%@ include file="includes/mensajes.jsp"%>
 
 	<div class="row">
 
 		<div class="offset-md-3 col-md-6 xs-12">
-			
+
 			<h1>Buscar matricula</h1>
 			<form action="buscar" method="post">
 
@@ -32,7 +33,7 @@
 			</form>
 
 		</div>
-		
+
 	</div>
 </div>
 </main>
