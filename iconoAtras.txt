@@ -1,0 +1,21 @@
+
+En el header:
+
+<!-- Fonts Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+    crossorigin="anonymous">
+    
+
+ El icono dentro del div class row:
+ 
+ <div class="col-1">
+		<span style="font-size: 3em; color: Dodgerblue;">
+  			<a href="index.jsp" class="fas fa-arrow-circle-left" role="button" aria-pressed="true"></a>
+		</span>	
+</div>
+
+
+
+Descargar del siguiente enlace el zip de FONTS AWESOME, descomprimir y meter en la carpeta css del proyecto:
+https://fontawesome.com/v4.7.0/
