@@ -1,7 +1,7 @@
 package com.ipartek.formacion.modelo.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,12 +12,12 @@ import com.ipartek.formacion.modelo.pojo.Multa;
 
 public class MatriculaDAO {
 
-	public static final String SQL_GETBYMATRICULA = "SELECT id, matricula from coche where matricula = ?";
-	public static final String SQL_GETALL = "SELECT m.id as 'id_multa', c.matricula as 'matricula',c.modelo as 'modelo', m.fecha_alta as 'fecha',m.fecha_baja as 'fecha_baja', m.concepto as 'concepto' FROM multa as m, coche as c, agente as a WHERE m.id_coche = c.id AND a.id = m.id_agente AND a.id = ? order by m.id desc;";
-	public static final String SQL_INSERTAR = "INSERT INTO  multa(importe, concepto, id_coche, id_agente) VALUES (?, ?, ?, ?);";
-	public static final String SQL_ANULAR = "UPDATE  multa SET fecha_modificacion = current_timestamp(), fecha_baja = current_timestamp() WHERE id=?;";
-	private static final String SQL_GETANULADAS = "SELECT m.id as 'id_multa', c.matricula as 'matricula', c.modelo as 'modelo',  m.fecha_alta as 'fecha_alta', m.fecha_baja as 'fecha_baja', m.concepto as 'concepto' FROM multa as m, coche as c, agente as a WHERE m.id_coche = c.id AND a.id = m.id_agente AND a.id = ? AND m.fecha_baja IS NOT NULL  order by m.id desc;";
-	private static final String SQL_HABILITAR = "UPDATE  multa SET fecha_modificacion = current_timestamp(), fecha_baja = null WHERE id=?;";
+	public static final String SQL_GETBYMATRICULA = "{call PA_dgt_getByMatricula(?)}";
+	public static final String SQL_GETALL = "{call PA_dgt_getAll(?)}";
+	public static final String SQL_INSERTAR = "{call PA_dgt_insertarMulta(?,?,?,?)}";
+	public static final String SQL_ANULAR = "{call PA_dgt_anular(?)}";
+	private static final String SQL_GETANULADAS = "{call PA_dgt_getAnuladas(?)}";
+	private static final String SQL_HABILITAR = "{call PA_dgt_habilitar(?)}";
 
 	private static MatriculaDAO INSTANCE = null;
 
@@ -39,11 +39,11 @@ public class MatriculaDAO {
 		boolean resul = false;
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_ANULAR);) {
+				CallableStatement cs = conn.prepareCall(SQL_ANULAR);) {
 
-			pst.setInt(1, idMulta);
+			cs.setInt(1, idMulta);
 
-			int affectedRows = pst.executeUpdate();
+			int affectedRows = cs.executeUpdate();
 			if (affectedRows == 1) {
 				resul = true;
 			}
@@ -58,11 +58,11 @@ public class MatriculaDAO {
 		boolean resul = false;
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_HABILITAR);) {
+				CallableStatement cs = conn.prepareCall(SQL_HABILITAR);) {
 
-			pst.setInt(1, idMulta);
+			cs.setInt(1, idMulta);
 
-			int affectedRows = pst.executeUpdate();
+			int affectedRows = cs.executeUpdate();
 			if (affectedRows == 1) {
 				resul = true;
 			}
@@ -72,18 +72,18 @@ public class MatriculaDAO {
 
 	}
 
-	public boolean insertar(int importe, String concepto, int idcoche, int idagente) throws SQLException {
+	public boolean insertar(Float importe, String concepto, int idcoche, int idagente) throws SQLException {
 
 		boolean resul = false;
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_INSERTAR);) {
+				CallableStatement cs = conn.prepareCall(SQL_INSERTAR);) {
 
-			pst.setInt(1, importe);
-			pst.setString(2, concepto);
-			pst.setInt(3, idcoche);
-			pst.setInt(4, idagente);
-			int affectedRows = pst.executeUpdate();
+			cs.setFloat(1, importe);
+			cs.setString(2, concepto);
+			cs.setInt(3, idcoche);
+			cs.setInt(4, idagente);
+			int affectedRows = cs.executeUpdate();
 			if (affectedRows == 1) {
 				resul = true;
 			}
@@ -98,11 +98,11 @@ public class MatriculaDAO {
 		Coche coche = null;
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_GETBYMATRICULA);) {
+				CallableStatement cs = conn.prepareCall(SQL_GETBYMATRICULA);) {
 
-			pst.setString(1, matricula);
+			cs.setString(1, matricula);
 
-			try (ResultSet rs = pst.executeQuery()) {
+			try (ResultSet rs = cs.executeQuery()) {
 
 				while (rs.next()) {
 
@@ -122,11 +122,11 @@ public class MatriculaDAO {
 		ArrayList<Multa> multas = new ArrayList<Multa>();
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_GETALL);) {
+				CallableStatement cs = conn.prepareCall(SQL_GETALL);) {
 
-			pst.setInt(1, id);
+			cs.setInt(1, id);
 
-			try (ResultSet rs = pst.executeQuery()) {
+			try (ResultSet rs = cs.executeQuery()) {
 
 				while (rs.next()) {
 					Multa m = new Multa();
@@ -158,11 +158,11 @@ public class MatriculaDAO {
 		ArrayList<Multa> multas = new ArrayList<Multa>();
 
 		try (Connection conn = ConnectionManager.getConnection();
-				PreparedStatement pst = conn.prepareStatement(SQL_GETANULADAS);) {
+				CallableStatement cs = conn.prepareCall(SQL_GETANULADAS);) {
 
-			pst.setInt(1, idAgente);
+			cs.setInt(1, idAgente);
 
-			try (ResultSet rs = pst.executeQuery()) {
+			try (ResultSet rs = cs.executeQuery()) {
 
 				while (rs.next()) {
 					Multa m = new Multa();

@@ -52,7 +52,7 @@ public class FormularioMultaController extends HttpServlet {
 
 			int idagente = Integer.parseInt(idagenteStr);
 
-			int importe = Integer.parseInt(importeStr);
+			Float importe = Float.parseFloat(importeStr);
 			Multa multaValid = new Multa();
 			multaValid.setImporte(importe);
 			multaValid.setConcepto(concepto);
