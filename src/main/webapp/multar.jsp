@@ -10,7 +10,7 @@
 			</span>
 		</div>
 	</div>
-</div>
+
 <%@ include file="includes/mensajes.jsp"%>
 <form action="formularioMulta" class="form-signin" method="post">
 	<div class="form-group">

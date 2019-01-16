@@ -1,9 +1,9 @@
 <%@ include file="includes/header.jsp"%>
-<%@ include file="includes/mensajes.jsp"%>
+
 
 <div class="container-fluid">
 	<div class="jumbotron mx-auto">
-
+		<%@ include file="includes/mensajes.jsp"%>
 		<h1 class="mb-5">Bienvenido, ${agente.nombre}</h1>
 
 		<div class="row">

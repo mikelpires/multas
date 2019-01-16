@@ -17,6 +17,7 @@ public class MatriculaDAO {
 	public static final String SQL_INSERTAR = "INSERT INTO  multa(importe, concepto, id_coche, id_agente) VALUES (?, ?, ?, ?);";
 	public static final String SQL_ANULAR = "UPDATE  multa SET fecha_baja = current_timestamp() WHERE id=?;";
 	private static final String SQL_GETANULADAS = "SELECT m.id as 'id_multa', c.matricula as 'matricula', c.modelo as 'modelo',  m.fecha_alta as 'fecha_alta', m.fecha_baja as 'fecha_baja', m.concepto as 'concepto' FROM multa as m, coche as c, agente as a WHERE m.id_coche = c.id AND a.id = m.id_agente AND a.id = ? AND m.fecha_baja IS NOT NULL  order by m.id desc;";
+	private static final String SQL_HABILITAR = "UPDATE  multa SET fecha_baja = null WHERE id=?;";
 
 	private static MatriculaDAO INSTANCE = null;
 
@@ -39,6 +40,25 @@ public class MatriculaDAO {
 
 		try (Connection conn = ConnectionManager.getConnection();
 				PreparedStatement pst = conn.prepareStatement(SQL_ANULAR);) {
+
+			pst.setInt(1, idMulta);
+
+			int affectedRows = pst.executeUpdate();
+			if (affectedRows == 1) {
+				resul = true;
+			}
+
+		}
+		return resul;
+
+	}
+
+	public boolean habilitar(int idMulta) throws SQLException {
+
+		boolean resul = false;
+
+		try (Connection conn = ConnectionManager.getConnection();
+				PreparedStatement pst = conn.prepareStatement(SQL_HABILITAR);) {
 
 			pst.setInt(1, idMulta);
 

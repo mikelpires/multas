@@ -63,6 +63,8 @@ public class FormularioMultaController extends HttpServlet {
 					if (dao.insertar(importe, concepto, idcoche, idagente)) {
 						LOG.debug("anyadida la multa por agente " + idagenteStr + " al coche con id " + idcocheStr
 								+ " importe a deber " + importeStr + " con concepto " + concepto);
+						Alerta alerta = new Alerta("success", "Multa guardada con exito");
+						request.setAttribute("alerta", alerta);
 						request.getRequestDispatcher("index.jsp").forward(request, response);
 					} else {
 						Alerta alerta = new Alerta("danger", "Ha habido un error");
