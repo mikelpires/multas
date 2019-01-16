@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.ipartek.formacion.modelo.dao.MatriculaDAO;
 import com.ipartek.formacion.modelo.pojo.Alerta;
@@ -36,30 +35,30 @@ public class AnularController extends HttpServlet {
 			int idAgente = Integer.parseInt(idAgenteStr);
 			if (opcion.equals("listar")) {
 				request.setAttribute("anuladas", dao.getAnuladas(idAgente));
-				request.getRequestDispatcher("listadoAnuladas.jsp").forward(request, response);
+				request.getRequestDispatcher("privado/listadoAnuladas.jsp").forward(request, response);
 			}
 			int idMulta = Integer.parseInt(idMultaStr);
 			if (opcion.equals("habilitar")) {
 				if (dao.habilitar(idMulta) == true) {
-					Alerta alerta = new Alerta("success", "Registro habilitado con exito");
+					Alerta alerta = new Alerta("success", "Multa habilitada con exito");
 					request.setAttribute("anuladas", dao.getAnuladas(idAgente));
 					request.setAttribute("alerta", alerta);
-					request.getRequestDispatcher("listadoAnuladas.jsp").forward(request, response);
+					request.getRequestDispatcher("privado/listadoAnuladas.jsp").forward(request, response);
 				}
 			}
 			if (opcion.equals("anular")) {
 				if (dao.anular(idMulta) == true) {
 
-					Alerta alerta = new Alerta("success", "Registro anulado con exito");
+					Alerta alerta = new Alerta("success", "Multa anulada con exito");
 					request.setAttribute("anuladas", dao.getAnuladas(idAgente));
 					request.setAttribute("alerta", alerta);
-					request.getRequestDispatcher("listadoAnuladas.jsp").forward(request, response);
+					request.getRequestDispatcher("privado/listadoAnuladas.jsp").forward(request, response);
 				}
 			}
 		} catch (SQLException e) {
 			Alerta alerta = new Alerta("danger", "Ha habido un error inesperado");
 			request.setAttribute("alerta", alerta);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("privado/index.jsp").forward(request, response);
 		}
 	}
 

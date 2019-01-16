@@ -1,18 +1,18 @@
 <%@ include file="../includes/header.jsp"%>
+<%@ include file="../includes/navbar.jsp"%>
 
 
-
-
+<div class="container-fluid">
 <div class="jumbotron">
 	<div class="row">
 		<div class="col-1">
 			<span style="font-size: 3em; color: Dodgerblue;"> <a
-				href="index.jsp" class="fas fa-arrow-circle-left" role="button"
+				href="privado/index.jsp" class="fas fa-arrow-circle-left" role="button"
 				aria-pressed="true"></a>
 			</span>
 		</div>
 	</div>
-	<%@ include file="includes/mensajes.jsp"%>
+	<%@ include file="../includes/mensajes.jsp"%>
 
 	<div class="row">
 
@@ -36,6 +36,7 @@
 
 	</div>
 </div>
-</main>
+</div>
+
 
 <%@ include file="../includes/footer.jsp"%>

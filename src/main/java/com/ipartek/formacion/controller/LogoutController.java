@@ -2,37 +2,29 @@ package com.ipartek.formacion.controller;
 
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.ipartek.formacion.modelo.dao.MatriculaDAO;
+import com.ipartek.formacion.modelo.pojo.Alerta;
 
-@WebServlet("/listado")
-public class MostrarMultasController extends HttpServlet {
+/**
+ * Servlet implementation class LogoutController
+ */
+@WebServlet("/logout")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MatriculaDAO dao;
 
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-		dao = MatriculaDAO.getInstance();
-	}
-
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String idAgente = request.getParameter("idAgente");
-
-		int id = Integer.parseInt(idAgente);
-		// HttpSession session = request.getSession();
-//		session.getAttribute("agente");
-		request.setAttribute("multas", dao.getAll(id));
-		request.getRequestDispatcher("privado/listadoMultas.jsp").forward(request, response);
-
+		doPost(request, response);
 	}
 
 	/**
@@ -41,7 +33,16 @@ public class MostrarMultasController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+
+		HttpSession session = request.getSession();
+		session.removeAttribute("agente");
+		session.invalidate();
+		session = null;
+
+		Alerta alerta = new Alerta("info", "Sesion cerrada con exito");
+		request.setAttribute("alerta", alerta);
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
+
 	}
 
 }

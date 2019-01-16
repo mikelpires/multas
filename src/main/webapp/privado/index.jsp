@@ -1,11 +1,10 @@
-<%@ include file="includes/header.jsp"%>
-
+<%@ include file="../includes/header.jsp"%>
+<%@ include file="../includes/navbar.jsp"%>
 
 <div class="container-fluid">
 	<div class="jumbotron mx-auto">
-		<%@ include file="includes/mensajes.jsp"%>
-		<h1 class="mb-5">Bienvenido, ${agente.nombre}</h1>
 
+		<%@ include file="../includes/mensajes.jsp"%>
 		<div class="row">
 			<div class="col-6">
 
@@ -26,7 +25,8 @@
 
 				<div class="card">
 
-					<a href="buscar.jsp" class="btn"> <img class="card-img-top"
+					<a href="privado/buscar.jsp" class="btn"> <img
+						class="card-img-top"
 						src="https://www.svgrepo.com/show/163525/write.svg"
 						alt="Card image cap">
 

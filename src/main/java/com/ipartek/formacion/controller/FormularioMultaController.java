@@ -52,7 +52,7 @@ public class FormularioMultaController extends HttpServlet {
 
 			int idagente = Integer.parseInt(idagenteStr);
 
-			int importe = Integer.parseInt(importeStr);
+			Float importe = Float.parseFloat(importeStr);
 			Multa multaValid = new Multa();
 			multaValid.setImporte(importe);
 			multaValid.setConcepto(concepto);
@@ -65,11 +65,11 @@ public class FormularioMultaController extends HttpServlet {
 								+ " importe a deber " + importeStr + " con concepto " + concepto);
 						Alerta alerta = new Alerta("success", "Multa guardada con exito");
 						request.setAttribute("alerta", alerta);
-						request.getRequestDispatcher("index.jsp").forward(request, response);
+						request.getRequestDispatcher("privado/index.jsp").forward(request, response);
 					} else {
 						Alerta alerta = new Alerta("danger", "Ha habido un error");
 						request.setAttribute("alerta", alerta);
-						request.getRequestDispatcher("index.jsp").forward(request, response);
+						request.getRequestDispatcher("privado/index.jsp").forward(request, response);
 					}
 				} catch (SQLException e) {
 
@@ -79,12 +79,12 @@ public class FormularioMultaController extends HttpServlet {
 			} else {
 				Alerta alerta = new Alerta("danger", "Los datos introducidos no cumplen el estilo minimo");
 				request.setAttribute("alerta", alerta);
-				request.getRequestDispatcher("multar.jsp").forward(request, response);
+				request.getRequestDispatcher("privado/multar.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
 			Alerta alerta = new Alerta("danger", "Los datos introducidos no son del tipo correcto");
 			request.setAttribute("alerta", alerta);
-			request.getRequestDispatcher("multar.jsp").forward(request, response);
+			request.getRequestDispatcher("privado/multar.jsp").forward(request, response);
 		}
 
 	}

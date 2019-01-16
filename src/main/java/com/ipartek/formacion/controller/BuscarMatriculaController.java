@@ -41,10 +41,10 @@ public class BuscarMatriculaController extends HttpServlet {
 		if (dao.getByMatricula(matricula) == null) {
 			Alerta alerta = new Alerta("danger", "La matricula introducida no existe");
 			request.setAttribute("alerta", alerta);
-			request.getRequestDispatcher("buscar.jsp").forward(request, response);
+			request.getRequestDispatcher("privado/buscar.jsp").forward(request, response);
 		} else {
 			request.setAttribute("coche", dao.getByMatricula(matricula));
-			request.getRequestDispatcher("multar.jsp").forward(request, response);
+			request.getRequestDispatcher("privado/multar.jsp").forward(request, response);
 		}
 	}
 
