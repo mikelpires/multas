@@ -34,7 +34,7 @@
 						</c:when>
 						<c:otherwise>
 							<td><a class="btn btn-secondary"
-								href="anular?opcion=listar&idAgente=${agente.id}">Ya anulada </a></td>
+								href="anular?opcion=listar&idAgente=${agente.id}">Anulada </a></td>
 						</c:otherwise>
 					</c:choose>
 				</tr>

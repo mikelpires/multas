@@ -15,9 +15,9 @@ public class MatriculaDAO {
 	public static final String SQL_GETBYMATRICULA = "SELECT id, matricula from coche where matricula = ?";
 	public static final String SQL_GETALL = "SELECT m.id as 'id_multa', c.matricula as 'matricula',c.modelo as 'modelo', m.fecha_alta as 'fecha',m.fecha_baja as 'fecha_baja', m.concepto as 'concepto' FROM multa as m, coche as c, agente as a WHERE m.id_coche = c.id AND a.id = m.id_agente AND a.id = ? order by m.id desc;";
 	public static final String SQL_INSERTAR = "INSERT INTO  multa(importe, concepto, id_coche, id_agente) VALUES (?, ?, ?, ?);";
-	public static final String SQL_ANULAR = "UPDATE  multa SET fecha_baja = current_timestamp() WHERE id=?;";
+	public static final String SQL_ANULAR = "UPDATE  multa SET fecha_modificacion = current_timestamp(), fecha_baja = current_timestamp() WHERE id=?;";
 	private static final String SQL_GETANULADAS = "SELECT m.id as 'id_multa', c.matricula as 'matricula', c.modelo as 'modelo',  m.fecha_alta as 'fecha_alta', m.fecha_baja as 'fecha_baja', m.concepto as 'concepto' FROM multa as m, coche as c, agente as a WHERE m.id_coche = c.id AND a.id = m.id_agente AND a.id = ? AND m.fecha_baja IS NOT NULL  order by m.id desc;";
-	private static final String SQL_HABILITAR = "UPDATE  multa SET fecha_baja = null WHERE id=?;";
+	private static final String SQL_HABILITAR = "UPDATE  multa SET fecha_modificacion = current_timestamp(), fecha_baja = null WHERE id=?;";
 
 	private static MatriculaDAO INSTANCE = null;
 
