@@ -20,13 +20,12 @@
 		<div class="form-group">
 			<label for="matricula">Matricula</label> <input type="text"
 				name="matricula" class="form-control" value="${coche.matricula}"
-				placeholder="AAAABBB" disabled>
+				placeholder="AAAABBB" readonly>
 		</div>
 
 		<div class="form-group">
 			<label for="importe">Importe:</label> <input name="importe"
-				type="number" step="0.01" min="0" class="form-control"
-				placeholder="Importe" autofocus required>
+				type="number" step="0.01" min="0" class="form-control" placeholder="Importe" autofocus required>
 		</div>
 
 		<div class="form-group">

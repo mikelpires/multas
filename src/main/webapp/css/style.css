@@ -6,7 +6,28 @@
 	opacity: 0.5;
 	margin-bottom: 5px;
 }
+.circulo img{
+	background:blue;
+	border-radius:50%;
+	
+}
+.circulo{
+	padding-bottom:40%;
+}
+.izquierda{
+	position:absolute;
+	top:0;
+	left:0;
+}
 
+.fa2xtext{
+	font-size:1.1em;
+	font-style:oblique;
+}
+.fondo{
+	background: url("dgt2.png") no-repeat top;
+	background-size: contain;
+}
 .space-20 {
 	margin-top: 20px;
 }

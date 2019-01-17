@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 
 import com.ipartek.formacion.modelo.dao.MatriculaDAO;
 import com.ipartek.formacion.modelo.pojo.Alerta;
+import com.ipartek.formacion.modelo.pojo.Coche;
 import com.ipartek.formacion.modelo.pojo.Multa;
 
 @WebServlet("/formularioMulta")
@@ -47,6 +48,7 @@ public class FormularioMultaController extends HttpServlet {
 		String idagenteStr = request.getParameter("idagente");
 		String importeStr = request.getParameter("importe");
 		String concepto = request.getParameter("concepto");
+		String matricula = request.getParameter("matricula");
 		try {
 			int idcoche = Integer.parseInt(idcocheStr);
 
@@ -69,7 +71,7 @@ public class FormularioMultaController extends HttpServlet {
 					} else {
 						Alerta alerta = new Alerta("danger", "Ha habido un error");
 						request.setAttribute("alerta", alerta);
-						request.getRequestDispatcher("privado/index.jsp").forward(request, response);
+						response.sendRedirect("privado/index.jsp");
 					}
 				} catch (SQLException e) {
 
@@ -78,11 +80,19 @@ public class FormularioMultaController extends HttpServlet {
 
 			} else {
 				Alerta alerta = new Alerta("danger", "Los datos introducidos no cumplen el estilo minimo");
+				Coche coche = new Coche();
+				coche.setId(idcoche);
+				coche.setMatricula(matricula);
+				request.setAttribute("coche", coche);
 				request.setAttribute("alerta", alerta);
 				request.getRequestDispatcher("privado/multar.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
 			Alerta alerta = new Alerta("danger", "Los datos introducidos no son del tipo correcto");
+			Coche coche = new Coche();
+			coche.setId(Integer.parseInt(idcocheStr));
+			coche.setMatricula(matricula);
+			request.setAttribute("coche", coche);
 			request.setAttribute("alerta", alerta);
 			request.getRequestDispatcher("privado/multar.jsp").forward(request, response);
 		}
