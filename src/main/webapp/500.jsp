@@ -66,13 +66,13 @@
 <body marginwidth="0" marginheight="0">
     <div id="block_error">
         <div>
-         <h2>Error 404. La pagina no existe</h2>
+         <h2>Error 500. Error interno.</h2>
         <p>
-        La pagina solicitada no existe<br />
+        Ha habido un error interno<br />
        Contacta con el administrador si el problema persiste. Lo sentimos
         </p>
         <p>
-        Si quieres volver a la pagina principal <a href="http://192.168.0.10:8080/multas/">pincha en este link</a>.
+        Si quieres volver a la pagina principal <a href="http://192.168.0.10:8080/multas/privado/index.jsp">pincha en este link</a>.
         </p>
         </div>
     </div>

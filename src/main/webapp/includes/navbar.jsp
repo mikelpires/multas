@@ -14,8 +14,10 @@
 			<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 				<a class="dropdown-item" href="privado/index.jsp">Volver al
 					inicio</a>
-						<div class="dropdown-divider"></div> <a class="dropdown-item"
-						href="logout">Cerrar sesion</a>
+						<div class="dropdown-divider"></div> 
+						<a class="dropdown-item fa2xtext" href="logout"> <i
+				class="fa fa-sign-out-alt fa-1x"></i> Cerrar sesión
+			</a>
 			</div>
 		</div>
 

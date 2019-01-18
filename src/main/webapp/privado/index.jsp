@@ -34,7 +34,7 @@
 	<div class="row">
 		<div class="col-lg-3 col-md-6 col-xs-6">
 			<!-- panel1 -->
-			<div class="panel panel-blue">
+			<div class="panel panel-blue" onclick="location.href='listado?idAgente=${agente.id}';">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-12 text-left">
@@ -55,7 +55,7 @@
 
 		<div class="col-lg-3 col-md-6 col-xs-6">
 			<!-- panel2 -->
-			<div class="panel panel-green">
+			<div class="panel panel-green" onclick="location.href='privado/buscar.jsp';">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-12 text-left">
@@ -77,7 +77,7 @@
 
 		<div class="col-lg-3 col-md-6 col-xs-6">
 			<!-- panel 3 -->
-			<div class="panel panel-red">
+			<div class="panel panel-red" onclick="location.href='anular?opcion=listar&idAgente=${agente.id}';">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-12 text-left">
@@ -97,7 +97,7 @@
 		</div>
 		<div class="col-lg-3 col-md-6 col-xs-6">
 			<!-- panel 4 -->
-			<div class="panel panel-yellow">
+			<div class="panel panel-yellow" onclick="location.href='#';">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-12 text-left">
@@ -120,46 +120,4 @@
 	<!-- /.row -->
 </div>
 
-<!-- /#wrapper -->
-<%-- 
-		<%@ include file="../includes/mensajes.jsp"%>
-		<div class="row">
-			<div class="col-6">
-
-
-				<div class="card">
-
-					<a href="listado?idAgente=${agente.id}" class="btn"> <img
-						class="card-img-top img" src="css/checklist.svg"
-						alt="Card image cap">
-
-						<div class="card-body">
-							<h2>Ver</h2>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-6">
-
-				<div class="card">
-
-					<a href="privado/buscar.jsp" class="btn"> <img
-						class="card-img-top"
-						src="https://www.svgrepo.com/show/163525/write.svg"
-						alt="Card image cap">
-
-						<div class="card-body">
-							<h2>Multar</h2>
-						</div>
-					</a>
-				</div>
-
-			</div>
-
-		</div>
-		<!-- div row -->
-	</div>
-	<!-- div jumbotron -->
-</div>
-<!-- div container --> --%>
 <%@ include file="../includes/footer.jsp"%>
