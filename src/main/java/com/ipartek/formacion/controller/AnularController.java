@@ -37,8 +37,9 @@ public class AnularController extends HttpServlet {
 				request.setAttribute("anuladas", dao.getAnuladas(idAgente));
 				request.getRequestDispatcher("privado/listadoAnuladas.jsp").forward(request, response);
 			}
-			int idMulta = Integer.parseInt(idMultaStr);
+			int idMulta;
 			if (opcion.equals("habilitar")) {
+				idMulta = Integer.parseInt(idMultaStr);
 				if (dao.habilitar(idMulta) == true) {
 					Alerta alerta = new Alerta("success", "Multa habilitada con exito");
 					request.setAttribute("anuladas", dao.getAnuladas(idAgente));
@@ -47,6 +48,7 @@ public class AnularController extends HttpServlet {
 				}
 			}
 			if (opcion.equals("anular")) {
+				idMulta = Integer.parseInt(idMultaStr);
 				if (dao.anular(idMulta) == true) {
 
 					Alerta alerta = new Alerta("success", "Multa anulada con exito");

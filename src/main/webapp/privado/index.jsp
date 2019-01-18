@@ -97,7 +97,7 @@
 		</div>
 		<div class="col-lg-3 col-md-6 col-xs-6">
 			<!-- panel 4 -->
-			<div class="panel panel-yellow" onclick="location.href='#';">
+			<div class="panel panel-yellow" onclick="location.href='estadisticas?idAgente=${agente.id}&anyo=2019';">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-12 text-left">
@@ -105,7 +105,7 @@
 						</div>
 					</div>
 				</div>
-				<a href="#">
+				<a href="estadisticas?idAgente=${agente.id}&anyo=2019">
 					<div class="panel-footer">
 						<span class="pull-left">Ver estadisticas</span> <span
 							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
