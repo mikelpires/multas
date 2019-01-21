@@ -2,7 +2,9 @@
 MULTAS
 =========================
 
-APP web para registrar infracciones de tráfico.
+**APP web para registrar infracciones de tráfico.
+Las capturas actuales se muestran en una vista de diseño adaptable a tamaño "iPhone X" dado que su funcion final es su uso en movil aun que se adapta a cualquier tipo de pantalla (responsive design)**
+
 
 
 TECNOLOGIAS
