@@ -84,4 +84,3 @@ Si se intenta acceder a una pagina que no existe se muestra la siguiente portada
 Y en caso de un error inesperado por parte de la aplicación o de intentar corromper el funcionamiento normal de programa por voluntad propia, muestra el siguiente error
 
 .. image:: readme/500.png
-.. image:: readme/500.png
