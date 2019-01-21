@@ -24,21 +24,21 @@ DIAGRAMA ENTIDAD-RELACION
     
 UX
 ----------------
-Para empezar, debemos logearnos con el numero de placa y contraseña del agente:
+**Para empezar, debemos logearnos con el numero de placa y contraseña del agente:**
 
 .. image:: readme/login.png
 
-En la pagina principal podemos seleccionar entre cuatro opciones, "Ver Multas", "Multar", "Multas anuladas" y "Ver estadisticas":
+**En la pagina principal podemos seleccionar entre cuatro opciones, "Ver Multas", "Multar", "Multas anuladas" y "Ver estadisticas":**
 
 .. image:: readme/menu.png
 
-Al seleccionar "Ver Multas" nos llevara a un listado con las multas que tiene almacenadas
-en la base de datos ese agente.
+**Al seleccionar "Ver Multas" nos llevara a un listado con las multas que tiene almacenadas
+en la base de datos ese agente.**
 
 .. image:: readme/listado1.png
 
-Tambien se puede filtrar por matricula, aunque se ordena automaticamente por fecha descendente
-Al pinchar en el "+" nos despliega el detalle de dicha multa, asi como la opción de anularla
+**Tambien se puede filtrar por matricula, aunque se ordena automaticamente por fecha descendente
+Al pinchar en el "+" nos despliega el detalle de dicha multa, asi como la opción de anularla**
 
 .. image:: readme/listado2.png
 
