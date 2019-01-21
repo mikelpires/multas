@@ -42,23 +42,23 @@ Al pinchar en el "+" nos despliega el detalle de dicha multa, asi como la opció
 
 .. image:: readme/listado2.png
 
-Para volver al menu tenemos 2 opciones, o con la flecha azul de atrás o desplegando el menu oculto en el que también podemos cerrar la sesión
+**Para volver al menu tenemos 2 opciones, o con la flecha azul de atrás o desplegando el menu oculto en el que también podemos cerrar la sesión**
 
 .. image:: readme/listado3.png
 
 
 .. image:: readme/menu.png
 
-Vamos a ver las multas anulada de dicho agente, y como se pueden volver a habilitar en caso de que fuera un error
+**Vamos a ver las multas anulada de dicho agente, y como se pueden volver a habilitar en caso de que fuera un error**
 
 
 .. image:: readme/listadoanuladas.png
 
 .. image:: readme/modal.png
-Al seleccionar "Multar" nos llevara a un formulario para buscar matriculas de coche, si
+**Al seleccionar "Multar" nos llevara a un formulario para buscar matriculas de coche, si
 la matricula existe en la base de datos nos mandara a otro formulario para poder registrarle
 una nueva multa. Sino existe la matricula te dira que no se encuentra en la base de datos y
-que pruebes con otra diferente.
+que pruebes con otra diferente.**
 
 .. image:: readme/menu.png
 
@@ -66,9 +66,9 @@ que pruebes con otra diferente.
 
 .. image:: readme/multar.png
 
-.. image:: readme/multar2.png
+.. image:: readme/multar2menu.png
 
-Y por ultimo tenemos los objetivos del agente, donde puede ver un detalle del año y de años anteriores de sus objetivos
+**Y por ultimo tenemos los objetivos del agente, donde puede ver un detalle del año y de años anteriores de sus objetivos**
 
 
 .. image:: readme/objetivos1.png
@@ -77,12 +77,34 @@ Y por ultimo tenemos los objetivos del agente, donde puede ver un detalle del a�
 .. image:: readme/objetivos2.png
 
 
-<strong>Control de errores:
-
-Si se intenta acceder a una pagina que no existe se muestra la siguiente portada
+-Control de errores:
+--------------------------
+--Errores a nivel de web
+------------------------
+**Si se intenta acceder a una pagina que no existe se muestra la siguiente portada**
 
 .. image:: readme/404.png
 
-Y en caso de un error inesperado por parte de la aplicación o de intentar corromper el funcionamiento normal de programa por voluntad propia, muestra el siguiente error
+**Y en caso de un error inesperado por parte de la aplicación o de intentar corromper el funcionamiento normal de programa por voluntad propia, muestra el siguiente error**
 
 .. image:: readme/500.png
+
+--Errores a nivel de login
+-----------------------------
+**Datos de login incorrectos**
+
+.. image:: readme/loginincorrecto.png
+**Numero de placa erroneo**
+.. image:: readme/loginincorrecto2.png
+**Password erronea**
+.. image:: readme/loginincorrecto3.png
+
+
+--Errores a nivel de multar
+-----------------------------
+**Concepto insuficiente**
+.. image:: readme/multarincorrecto1.png
+
+**Tipo erroneo**
+En caso de saltarse la validacion html5 
+.. image:: readme/multarincorrecto2.png
