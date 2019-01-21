@@ -73,3 +73,15 @@ Y por ultimo tenemos los objetivos del agente, donde puede ver un detalle del a√
 
 
 .. image:: readme/objetivos2.png
+
+
+Control de errores:
+
+Si se intenta acceder a una pagina que no existe se muestra la siguiente portada
+
+.. image:: readme/404.png
+
+Y en caso de un error inesperado por parte de la aplicaci√≥n o de intentar corromper el funcionamiento normal de programa por voluntad propia, muestra el siguiente error
+
+.. image:: readme/500.png
+.. image:: readme/500.png
