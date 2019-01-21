@@ -18,7 +18,7 @@ Apendice Base de Datos
 DIAGRAMA ENTIDAD-RELACION
 ----------------
 
-.. image:: readme/diagramadgt.png
+.. image:: readme/er.png
 
     
 UX
