@@ -9,6 +9,7 @@ TECNOLOGIAS
 ----------------
 JAVAEE, MySQL, proyecto mavenizado 3.0 
 Uso de JSLT expression language.
+Html,Css,Js,Jquery
 
 
 Apendice Base de Datos
