@@ -66,6 +66,8 @@ que pruebes con otra diferente.
 
 .. image:: readme/multar.png
 
+.. image:: readme/multar2.png
+
 Y por ultimo tenemos los objetivos del agente, donde puede ver un detalle del año y de años anteriores de sus objetivos
 
 
@@ -75,7 +77,7 @@ Y por ultimo tenemos los objetivos del agente, donde puede ver un detalle del a�
 .. image:: readme/objetivos2.png
 
 
-Control de errores:
+<strong>Control de errores:
 
 Si se intenta acceder a una pagina que no existe se muestra la siguiente portada
 
