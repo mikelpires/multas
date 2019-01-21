@@ -94,17 +94,25 @@ que pruebes con otra diferente.**
 **Datos de login incorrectos**
 
 .. image:: readme/loginincorrecto.png
+
 **Numero de placa erroneo**
+
 .. image:: readme/loginincorrecto2.png
+
 **Password erronea**
+
 .. image:: readme/loginincorrecto3.png
 
 
 --Errores a nivel de multar
 -----------------------------
+
 **Concepto insuficiente**
+
 .. image:: readme/multarincorrecto1.png
 
 **Tipo erroneo**
+
 En caso de saltarse la validacion html5 
+
 .. image:: readme/multarincorrecto2.png
