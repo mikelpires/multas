@@ -19,8 +19,8 @@
 		<c:otherwise><i class="fas fa-times-circle"></i></c:otherwise>
 	</c:choose> --%>
 
-	<h2>
-		Total mes ${objetivo.objetivoMes} &euro; <small>/ 1000 </small>
+	<p>
+		<strong>Total mes</strong> ${objetivo.objetivoMes} &euro; <small>/ 1000 </small>
 		<c:choose>
 			<c:when test="${objetivo.objetivoMesCumplido}">
 				<i class="fas fa-check-circle green"></i>
@@ -29,9 +29,9 @@
 				<i class="fas fa-times-circle red"></i>
 			</c:otherwise>
 		</c:choose>
-	</h2>
-	<h2>
-		Total año ${objetivo.objetivoAnyo} &euro; <small>/ 12000 </small>
+	</p>
+	<p>
+		<strong>Total año </strong>${objetivo.objetivoAnyo} &euro; <small>/ 12000 </small>
 		<c:choose>
 			<c:when test="${objetivo.objetivoAnyoCumplido}">
 				<i class="fas fa-check-circle green"></i>
@@ -40,7 +40,7 @@
 				<i class="fas fa-times-circle red"></i>
 			</c:otherwise>
 		</c:choose>
-	</h2>
+	</p>
 
 <hr>
 	<h1>Objetivos anuales</h1>

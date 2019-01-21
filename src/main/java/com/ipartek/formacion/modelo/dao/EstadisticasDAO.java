@@ -10,7 +10,7 @@ import com.ipartek.formacion.modelo.ConnectionManager;
 
 public class EstadisticasDAO {
 	public static final String SQL_GETOBJETIVOSMES = "select total from v_dgt_objetivos where id_agente = ? AND month(now())=mes";
-	private static final String SQL_GETOBJETIVOSANYO = "select sum(total) from v_dgt_objetivos where id_agente = ? AND year(now())=anyo";
+	private static final String SQL_GETOBJETIVOSANYO = "select sum(total) as 'total' from v_dgt_objetivos where id_agente = ? AND year(now())=anyo";
 	private static final String SQL_GETALLBYANYO = "select mes, total from v_dgt_objetivos where id_agente = ? AND anyo=?";
 	private static EstadisticasDAO INSTANCE = null;
 
