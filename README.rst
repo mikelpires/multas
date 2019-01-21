@@ -113,6 +113,6 @@ que pruebes con otra diferente.**
 
 **Tipo erroneo**
 
-En caso de saltarse la validacion html5 
+**En caso de saltarse la validacion html5**
 
 .. image:: readme/multarincorrecto2.png
