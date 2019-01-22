@@ -1,0 +1,1 @@
+<i class="fas fa-times-circle red" data-toggle="tooltip" data-placement="top" title="Objetivo no cumplido"></i>

@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-1">
 			<span style="font-size: 3em; color: Dodgerblue;"> <a
-				href="privado/buscar.jsp" class="fas fa-arrow-circle-left"
+				href="privado/index.jsp" class="fas fa-arrow-circle-left"
 				role="button" aria-pressed="true"></a>
 			</span>
 		</div>
@@ -23,10 +23,10 @@
 		<strong>Total mes</strong> ${objetivo.objetivoMes} &euro; <small>/ 1000 </small>
 		<c:choose>
 			<c:when test="${objetivo.objetivoMesCumplido}">
-				<i class="fas fa-check-circle green"></i>
+				<%@ include file="../includes/iconos/tick.jsp"%>
 			</c:when>
 			<c:otherwise>
-				<i class="fas fa-times-circle red"></i>
+				<%@ include file="../includes/iconos/not.jsp"%>
 			</c:otherwise>
 		</c:choose>
 	</p>
@@ -34,10 +34,10 @@
 		<strong>Total año </strong>${objetivo.objetivoAnyo} &euro; <small>/ 12000 </small>
 		<c:choose>
 			<c:when test="${objetivo.objetivoAnyoCumplido}">
-				<i class="fas fa-check-circle green"></i>
+				<%@ include file="../includes/iconos/tick.jsp"%>
 			</c:when>
 			<c:otherwise>
-				<i class="fas fa-times-circle red"></i>
+				<%@ include file="../includes/iconos/not.jsp"%>
 			</c:otherwise>
 		</c:choose>
 	</p>
@@ -96,10 +96,10 @@
 					<td>${obj.key}</td>
 					<td>${obj.value}&euro;<small>/ 1000 </small> <c:choose>
 							<c:when test="${obj.value > 1000}">
-								<i class="fas fa-check-circle green"></i>
+								<%@ include file="../includes/iconos/tick.jsp"%>
 							</c:when>
 							<c:otherwise>
-								<i class="fas fa-times-circle red"></i>
+								<%@ include file="../includes/iconos/not.jsp"%>
 							</c:otherwise>
 						</c:choose></td>
 				</tr>

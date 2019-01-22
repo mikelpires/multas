@@ -1,0 +1,1 @@
+<i class="fas fa-check-circle green" data-toggle="tooltip" data-placement="top" title="Objetivo cumplido"></i>
