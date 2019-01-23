@@ -2,21 +2,25 @@
 MULTAS
 =========================
 
-**APP web para registrar infracciones de tráfico.
-Las capturas actuales se muestran en una vista de diseño adaptable a tamaño "iPhone X" dado que su funcion final es su uso en movil aun que se adapta a cualquier tipo de pantalla (responsive design)**
+**APP web para registrar infracciones de tráfico.**
+
+**Las capturas actuales se muestran en una vista de diseño adaptable a tamaño "iPhone X" dado que su funcion final es su uso en movil aun que se adapta a cualquier tipo de pantalla (responsive design)**
 
 
 
 TECNOLOGIAS
 ----------------
 JAVAEE, MySQL, proyecto mavenizado 3.0 
-Uso de JSLT expression language.
+
+Uso de JSLT expression language
+
 Html,Css,Js,Jquery
 
 
 Apendice Base de Datos [MySql (InnoDB)]
 -------------------------------
 **El fichero donde se especifica la base de datos se encuentra en [ src/main/resources/database.properties ]**
+
 **El fichero donde se encuentran las instrucciones SQL para la creación de la base de datos con unos ejemplos precargados es el [ dgt.sql ]**
 
 DIAGRAMA ENTIDAD-RELACION
