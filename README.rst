@@ -10,18 +10,20 @@ MULTAS
 
 TECNOLOGIAS
 ----------------
-JAVAEE, MySQL, proyecto mavenizado 3.0 
+**JAVAEE, MySQL, proyecto mavenizado 3.0**
 
-Uso de JSLT expression language
+**Uso de JSLT expression language**
 
-Html,Css,Js,Jquery
+**Html,Css,Js,Jquery**
 
 
 Apendice Base de Datos [MySql (InnoDB)]
 -------------------------------
-**El fichero donde se especifica la base de datos se encuentra en [ src/main/resources/database.properties ]**
+**El fichero donde se especifica la base de datos se encuentra en** 
+         src/main/resources/database.properties 
 
-**El fichero donde se encuentran las instrucciones SQL para la creación de la base de datos con unos ejemplos precargados es el [ dgt.sql ]**
+**El fichero donde se encuentran las instrucciones SQL para la creación de la base de datos con unos ejemplos precargados es el**
+         dgt.sql 
 
 DIAGRAMA ENTIDAD-RELACION
 ----------------
