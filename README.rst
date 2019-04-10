@@ -12,7 +12,7 @@ TECNOLOGIAS
 ----------------
 **JAVAEE, MySQL, proyecto mavenizado 3.0**
 
-**Uso de JSLT expression language**
+**Uso de JSTL expression language**
 
 **Html,Css,Js,Jquery**
 
